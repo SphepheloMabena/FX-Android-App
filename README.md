@@ -1,5 +1,5 @@
 # FX-Android-App
-This app provides exchanged rates . Users can get exchange rates by supplying selected a currency on the drop down box. 
+This app provides exchanged rates . Users can get exchange rates by selecting a currency on the drop down box. 
 Ex Change rates are given against the USD. 
 The App also provides a graph showing rates for the last 30 Days.
 
