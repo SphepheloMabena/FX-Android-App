@@ -53,7 +53,7 @@ class CurrencyViewModel: ViewModel() {
 
         println("Start Date : ${startDate}")
         println("End Date : ${endDate}")
-        val url="https://fxmarketapi.com/apitimeseries?api_key=-w_RLoBdBh_ILvNaVRqU&currency=${currency}&start_date=${startDate.toString()}&end_date=${endDate.toString()}"
+        val url="https://fxmarketapi.com/apitimeseries?api_key=q5GIw4eT-TpRjLQndKQ3&currency=${currency}&start_date=${startDate.toString()}&end_date=${endDate.toString()}"
         println("URL ${url}")
         /*val url="https://fxmarketapi.com/apitimeseries?api_key=-w_RLoBdBh_ILvNaVRqU&currency=EURUSD&start_date=2018-07-02&end_date=2018-09-03"*/
         val process=ProcessData()
@@ -151,7 +151,7 @@ class CurrencyViewModel: ViewModel() {
     }
     fun getCurrentExRate(currencyName:String,tv:TextView,retrofit: Retrofit)
     {
-        var endpoint:String="https://fxmarketapi.com/apilive?api_key=-w_RLoBdBh_ILvNaVRqU&currency=${currencyName}"
+        var endpoint:String="https://fxmarketapi.com/apilive?api_key=q5GIw4eT-TpRjLQndKQ3&currency=${currencyName}"
         val currencyExRate = CurrencyExRateInstance(retrofit).currencyExRateInterface.CurrencyExRateInfom(endpoint);
         currencyExRate.enqueue(object : retrofit2.Callback<CurrencyExRate> {
             @RequiresApi(Build.VERSION_CODES.O)

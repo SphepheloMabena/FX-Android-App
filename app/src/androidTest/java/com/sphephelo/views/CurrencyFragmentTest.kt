@@ -14,6 +14,8 @@ import junit.framework.TestCase
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import java.util.concurrent.CountDownLatch
+import java.util.concurrent.TimeUnit
 
 @RunWith(AndroidJUnit4::class)
 class CurrencyFragmentTest
@@ -37,7 +39,9 @@ class CurrencyFragmentTest
     {
 
         onView(withId(R.id.fromSpinner)).perform(click())
-        //Espresso.onView(withId(R.id.profile_image)).perform(ViewActions.click());
+        var latch=CountDownLatch(1)
+        latch.await(7,TimeUnit.MICROSECONDS)
+
     }
     @Test
     fun LowMemory(){
