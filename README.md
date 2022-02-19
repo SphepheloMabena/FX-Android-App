@@ -1,9 +1,9 @@
 # FX-Android-App
-This app provides exchanged rates . Users can get exchange rates by selecting a currency on the drop down box. 
-Ex Change rates are given against the USD. 
+This app provides exchange rates . Users can get exchange rates by selecting a currency on the drop down box. 
+Exchange rates are given against the USD. 
 The App also provides a graph showing rates for the last 30 Days.
 
-I used the MVVM architceture, Single Activity principle and Databinding.
+I used the MVVM architecture, Single Activity principle and Databinding.
 I also used Dagger for dependency injection.
 I used the https://fxmarketapi.com/ API for the data.
 Retrofit2 was used to access the API data. 
