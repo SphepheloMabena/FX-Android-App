@@ -4,18 +4,23 @@ import androidx.fragment.app.testing.FragmentScenario
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.lifecycle.Lifecycle
 import androidx.test.core.app.ActivityScenario
+import androidx.test.espresso.Espresso
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.assertion.ViewAssertions
+import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.sphephelo.fx.MainActivity
 import com.sphephelo.fx.R
 import junit.framework.TestCase
+import org.hamcrest.Matchers
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
+import java.util.regex.Pattern.matches
 
 @RunWith(AndroidJUnit4::class)
 class CurrencyFragmentTest
@@ -33,14 +38,43 @@ class CurrencyFragmentTest
         scenario.moveToState(Lifecycle.State.CREATED);
     }
 
+    @Test
+    fun SpinnerIsDisplayed()
+    {
+        onView(withId(R.id.fromSpinner)).check(
+            ViewAssertions.matches(isDisplayed())
+        )
+    }
 
     @Test
-    fun Test()
+    fun graphIsDisplayed()
+    {
+            onView(withId(R.id.getTheGraph)).check(
+                ViewAssertions.matches(isDisplayed())
+            )
+
+
+
+    }
+
+
+
+
+    @Test
+    fun TestSpinner()
     {
 
-        onView(withId(R.id.fromSpinner)).perform(click())
-        var latch=CountDownLatch(1)
-        latch.await(7,TimeUnit.MICROSECONDS)
+        onView(withId(R.id.fromSpinner)).perform(
+            click(),
+
+
+            )
+        Espresso.onData(
+            Matchers.allOf(
+                Matchers.`is`(Matchers.instanceOf(String::class.java)),
+                Matchers.`is`("AUD")
+            )
+        ).perform(click())
 
     }
     @Test

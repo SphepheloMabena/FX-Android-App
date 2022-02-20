@@ -73,4 +73,10 @@ dependencies {
     // alternatively - without Android dependencies for tests
     testImplementation "androidx.paging:paging-common:3.1.0"
 
+    // Optional -- mockito-kotlin
+    testImplementation "org.mockito:mockito-kotlin:4.0.0"
+    // Optional -- Mockk framework
+    testImplementation "io.mockk:mockk:4.0.0"
+    androidTestImplementation 'org.mockito:mockito-android:4.0.0'
+
 }
